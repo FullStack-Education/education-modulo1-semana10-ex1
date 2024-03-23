@@ -1,5 +1,6 @@
 package br.com.fullstack.education.m1s10ex1.controller;
 
+import br.com.fullstack.education.m1s10ex1.dto.EmprestimoFiltro;
 import br.com.fullstack.education.m1s10ex1.entity.EmprestimoEntity;
 import br.com.fullstack.education.m1s10ex1.service.EmprestimoService;
 import org.springframework.http.HttpStatus;
@@ -19,8 +20,8 @@ public class EmprestimoController {
     }
 
     @GetMapping
-    public ResponseEntity<List<EmprestimoEntity>> get() {
-        return ResponseEntity.ok().body(service.buscarTodos());
+    public ResponseEntity<List<EmprestimoEntity>> get(EmprestimoFiltro filtro) {
+        return ResponseEntity.ok().body(service.buscarTodos(filtro));
     }
 
     @GetMapping("{id}")

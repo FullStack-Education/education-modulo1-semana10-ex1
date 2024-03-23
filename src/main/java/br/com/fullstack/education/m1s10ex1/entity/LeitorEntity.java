@@ -18,7 +18,7 @@ public class LeitorEntity implements Serializable {
     private String nome;
 
     @Column(nullable = false, length = 20)
-    private String telefono;
+    private String telefone;
 
     private String endereco;
 
